@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Sans+JP:wght@700;900&display=swap");
+
+:root {
+  --primary-blue: #a8e0f0; /* Light blue from background */
+  --dark-blue: #2a4d7a; /* Darker blue from grid/pants */
+  --text-black: #000000;
+  --glitch-cyan: #00ffff;
+  --glitch-magenta: #ff00ff;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  overflow: hidden; /* Prevent scrollbars due to animations */
+  background-color: #f0f0f0; /* Fallback background */
+}
+
+.landing-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align content to the right */
+  justify-content: flex-start; /* Align content to the top */
+  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E4%BB%99%E5%8F%B0%E8%82%B2%E8%8B%B1%E5%AD%A6%E5%9C%92%E6%B2%96%E7%B8%84%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1-rbWlOKWMn4oAm0Ohgy68v3aUXfITCm.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: var(--text-black);
+  position: relative;
+  animation: background-float 20s ease-in-out infinite alternate;
+}
+
+@keyframes background-float {
+  0% {
+    background-position: center center;
+  }
+  100% {
+    background-position: center 55%;
+  }
+}
+
+.school-name {
+  position: absolute;
+  top: 5vw; /* Responsive top position */
+  left: 5vw; /* Responsive left position */
+  font-size: clamp(1.5rem, 3vw, 2.5rem); /* Responsive font size */
+  font-weight: 700;
+  color: var(--text-black);
+  text-shadow: 2px 2px var(--glitch-cyan), -2px -2px var(--glitch-magenta);
+  z-index: 10;
+}
+
+.event-info {
+  position: absolute;
+  top: 15%; /* Adjust based on image */
+  right: 5%; /* Adjust based on image */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  z-index: 10;
+}
+
+.event-title {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(4rem, 10vw, 10rem); /* Responsive font size */
+  font-weight: 900;
+  color: var(--text-black);
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  animation: glitch 1.5s infinite alternate;
+  position: relative;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 var(--glitch-cyan), -0.05em 0 0 var(--glitch-magenta);
+    transform: translate(0, 0);
+  }
+  20% {
+    text-shadow: -0.05em -0.02em 0 var(--glitch-cyan), 0.05em 0.02em 0 var(--glitch-magenta);
+    transform: translate(0.02em, -0.02em);
+  }
+  40% {
+    text-shadow: 0.02em 0.05em 0 var(--glitch-cyan), -0.02em -0.05em 0 var(--glitch-magenta);
+    transform: translate(-0.02em, 0.02em);
+  }
+  60% {
+    text-shadow: -0.03em 0.03em 0 var(--glitch-cyan), 0.03em -0.03em 0 var(--glitch-magenta);
+    transform: translate(0.03em, 0.03em);
+  }
+  80% {
+    text-shadow: 0.04em -0.04em 0 var(--glitch-cyan), -0.04em 0.04em 0 var(--glitch-magenta);
+    transform: translate(-0.04em, -0.04em);
+  }
+  100% {
+    text-shadow: 0.05em 0 0 var(--glitch-cyan), -0.05em 0 0 var(--glitch-magenta);
+    transform: translate(0, 0);
+  }
+}
+
+.event-details {
+  margin-top: 1rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 400;
+  color: var(--text-black);
+}
+
+.event-details p {
+  margin: 0.5rem 0;
+  font-size: clamp(1rem, 2.5vw, 2rem); /* Responsive font size */
+  line-height: 1.2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .school-name {
+    top: 3vw;
+    left: 3vw;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+  }
+
+  .event-info {
+    top: 10%;
+    right: 3%;
+  }
+
+  .event-title {
+    font-size: clamp(3rem, 12vw, 8rem);
+  }
+
+  .event-details p {
+    font-size: clamp(0.9rem, 3vw, 1.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .school-name {
+    top: 2vw;
+    left: 2vw;
+    font-size: clamp(1rem, 5vw, 1.5rem);
+  }
+
+  .event-info {
+    top: 8%;
+    right: 2%;
+  }
+
+  .event-title {
+    font-size: clamp(2.5rem, 15vw, 6rem);
+  }
+
+  .event-details p {
+    font-size: clamp(0.8rem, 4vw, 1.2rem);
+  }
+}
