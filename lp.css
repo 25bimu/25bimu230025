@@ -1,0 +1,88 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #3b82f6 0%, #fbbf24 100%);
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.date-block {
+  background: linear-gradient(135deg, #2563eb, #f59e0b);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+}
+
+.date-separator {
+  margin: 0 10px;
+  color: #3b82f6;
+}
+
+.year {
+  color: #3b82f6;
+}
+
+.festival-title {
+  font-size: 2em;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #2563eb, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.festival-description {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  background-color: #007bff;
+  transition: all 0.3s ease;
+}
+
+.cta-button:not(.secondary) {
+  background: linear-gradient(135deg,#2563ed,#f59e0b);
+  box-shadow:0 10px 20px rgba(37,99,235,00.3s)
+}
+
+.cta-button.secondary{
+
+  color:#2563ed;
+  border: 2px solid #2567;
+  background-color: transparent;
+}
+
+.cta-button:hover{
+opacity:0.8;
+box-shadow:0 15px 30px rgba(37,99,235,0.4);
+
+}
+.cta-button.secondary:hover{
+  background:#2563ed;
+  color:white;
+  
+}
+
