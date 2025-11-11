@@ -71,26 +71,27 @@
       </div>
     </div>
   </section>
-  <!-- おいしいタイのコーヒーランキング ベスト３ -->
-  <section id="おいしいタイのコーヒーランキング ベスト３">
-    <h2>おいしいタイのコーヒーランキング ベスト３</h2>
-    <div class="おいしいタイのコーヒーランキング ベスト３">
-        <img src="https://images.unsplash.com/photo-1625944230949-fb36bde2903a" alt="タイ風アイスコーヒー">
-        <h3>第1位：タイ風アイスコーヒー</h3>
-        <p>タイ風の甘くて濃いアイスコーヒー　練乳やスパイスを加えて独特の風味に仕上げます。</p>
-      
-      <img src="https://images.unsplash.com/photo-1625944230949-fb36bde2903a" alt="オーリアン">
-      <h3>第2位：オーリアン</h3>
-      <p>タイの伝統的なアイスブレンドコーヒー。コーヒーに焙煎した穀物や茶葉、香辛料を混ぜて作られる香ばしい飲み物です。</p>
+  <section id="ranking">
+  <h2>おいしいタイのコーヒーランキング ベスト3</h2>
 
+  <!-- 第1位：タイ風アイスコーヒー -->
+  <div class="rank-item">
+    <h3>第1位：タイ風アイスコーヒー</h3>
+    <p>タイ風の甘くて濃いアイスコーヒー。練乳やスパイスを加えて独特の風味に仕上げます。</p>
+  </div>
 
-      <img src="https://images.unsplash.com/photo-1625944230949-fb36bde2903a" alt="ココナッツコーヒー">
-      <h3>第３位：ココナッツコーヒー</h3>
-      <p>コーヒーにココナッツミルクやココナッツシロップを加えた、まろやかで南国風の味わいです。ホットでもアイスでもおすすめ。</p>
+  <!-- 第2位：オーリアン -->
+  <div class="rank-item">
+    <h3>第2位：オーリアン</h3>
+    <p>焙煎した穀物や茶葉、香辛料を混ぜて作られる香ばしい飲み物です。</p>
+  </div>
 
-      
-    </div>
-      </section>
+  <!-- 第3位：ココナッツコーヒー -->
+  <div class="rank-item">
+    <h3>第3位：ココナッツコーヒー</h3>
+    <p>ココナッツミルクを加えた、まろやかで南国風の味わいです。</p>
+  </div>
+</section>
 
   <!-- Access -->
   <section id="access">
@@ -110,19 +111,21 @@
 
   <!-- スクロールアニメーション -->
   <script>
-    const items = document.querySelectorAll('.menu-item');
-    const showOnScroll = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      items.forEach(item => {
-        const boxTop = item.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) {
-          item.classList.add('visible');
-        }
-      });
-    };
-    window.addEventListener('scroll', showOnScroll);
-    showOnScroll();
-  </script>
+  const items = document.querySelectorAll('.menu-item, section');
+
+  const showOnScroll = () => {
+    const triggerBottom = window.innerHeight * 0.85;
+    items.forEach(item => {
+      const boxTop = item.getBoundingClientRect().top;
+      if (boxTop < triggerBottom) {
+        item.classList.add('visible');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', showOnScroll);
+  showOnScroll();
+</script>
 
 </body>
 </html>

@@ -177,3 +177,226 @@
       header p { font-size: 1rem; }
       .btn { font-size: 0.9rem; }
     }
+    /* --------- スクロールアニメーション（全セクション） --------- */
+section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* --------- スクロールアニメーション：柔らかい動き --------- */
+
+/* 🌿 コンセプト */
+#about {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+#about.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ☕ メニュー */
+#menu {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: all 1s ease;
+}
+#menu.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 🥥 おいしいタイのコーヒーランキング */
+#おいしいタイのコーヒーランキング\ ベスト３ {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 1s ease;
+}
+#おいしいタイのコーヒーランキング\ ベスト３.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 📍 アクセス */
+#access {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+#access.visible {
+  opacity: 1;
+}
+/* 🍰 メニューのアニメーション効果 */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 30px 0;
+}
+
+.menu-item {
+  width: 250px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+/* เอฟเฟกต์เมื่อเอาเมาส์ชี้ */
+.menu-item:hover {
+  transform: translateY(-10px) scale(1.05) rotate(-1deg);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* รูปภาพในแต่ละเมนู */
+.menu-item img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+/* เมื่อชี้แล้วรูปจะซูมเล็กน้อย */
+.menu-item:hover img {
+  transform: scale(1.08);
+}
+
+/* ข้อความชื่อเมนู */
+.menu-item h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #5b3924;
+}
+
+/* คำอธิบายเมนู */
+.menu-item p {
+  font-size: 0.9rem;
+  color: #6a4a3c;
+  margin-top: 6px;
+}
+/* 🍮 タイコーヒーランキング（画像デザイン） */
+.rank {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.rank h2 {
+  font-size: 2rem;
+  color: #5b3924;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.rank h3 {
+  font-size: 1.4rem;
+  color: #6b4226;
+  margin-top: 40px;
+}
+
+.rank img {
+  width: 80%;
+  max-width: 380px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  margin: 15px 0 25px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* เอฟเฟกต์เวลาเอาเมาส์ชี้ */
+.rank img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* คำอธิบาย */
+.rank p {
+  font-size: 1.1rem;
+  color: #553b2a;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+#ranking {
+  text-align: center;
+  background-color: #f9e0bb;
+  padding: 40px 20px;
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#ranking h2 {
+  font-size: 2rem;
+  color: #5a3825;
+  margin-bottom: 30px;
+}
+
+.rank-item {
+  margin-bottom: 50px;
+}
+
+.rank-item h3 {
+  color: #3b2b20;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.rank-item p {
+  color: #4a403a;
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 10px auto 0;
+  line-height: 1.6;
+}
+
+/* จัดรูปภาพให้สวย */
+.drink-image {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.drink-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+#ranking {
+  text-align: center;
+  background-color: #f9e0bb;
+  padding: 40px 20px;
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.rank-item {
+  margin-bottom: 50px;
+}
+
+.drink-image {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.drink-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
