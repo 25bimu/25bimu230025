@@ -1,130 +1,503 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>( っ◔◡◔)っ　Kati Café | タイの香り漂う癒しカフェ</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Kati Cafe - タイらしさを沖縄で</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+Thai:wght@300;400;600&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Noto Sans Thai', sans-serif;
+      overflow-x: hidden;
+    }
+    .font-display {
+      font-family: 'Playfair Display', serif;
+    }
+    /* Fade in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+      opacity: 0;
+    }
+    .fade-in-delay-1 {
+      animation-delay: 0.2s;
+    }
+    .fade-in-delay-2 {
+      animation-delay: 0.4s;
+    }
+    .fade-in-delay-3 {
+      animation-delay: 0.6s;
+    }
+    /* Float animation */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
+    /* Slide in from left */
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    /* Slide in from right */
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .slide-in-right {
+      animation: slideInRight 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    /* Scale in animation */
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .scale-in {
+      animation: scaleIn 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    /* Pulse animation for CTA */
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+    .pulse-hover:hover {
+      animation: pulse 0.6s ease-in-out;
+    }
+    /* Rotate animation */
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .rotate-slow {
+      animation: rotate 20s linear infinite;
+    }
+    /* Gradient background animation */
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    .gradient-animate {
+      background-size: 200% 200%;
+      animation: gradientShift 8s ease infinite;
+    }
+    /* Intersection Observer classes */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Menu item hover effect */
+    .menu-item {
+      transition: all 0.3s ease;
+    }
+    .menu-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
-<body>
-
-  <!-- Hero -->
-  <header>
-    <h1>( っ◔◡◔)っ　Kati Café</h1>
-    <p>スパイスと癒しの香りを、心地よいカフェ空間で。</p>
-    <a href="#menu" class="btn">メニューを見る</a>
-  </header>
-
-  <!-- About -->
-  <section id="about">
-    <h2>🌿 コンセプト</h2>
-    <p>
-      ( っ◔◡◔)っ　Kati Café は、タイ語で「こんにちは」の意味を持つ "Kati Café" のように、<br>
-      誰でも気軽に立ち寄れる、温かくてやさしい空間を目指しています。<br>
-      タイのハーブと地元食材を組み合わせ、体にも心にもやさしい料理をお届けします。
-    </p>
-  </section>
-
-  <!-- Menu -->
-  <section id="menu">
-    <h2>メニュー</h2>
-    <div class="menu">
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1625944230949-fb36bde2903a" alt="アメリカーノ">
-        <h3>アメリカーノ</h3>
-        <p>ミルクや砂糖を入れない、濃いブラックコーヒーです。</p>
+<body class="bg-stone-50">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 fade-in">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-2">
+          <span class="text-3xl">:hibiscus:</span>
+          <span class="font-display text-2xl font-bold text-amber-800">Kati Cafe</span>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="text-stone-700 hover:text-amber-600 transition">ホーム</a>
+          <a href="#about" class="text-stone-700 hover:text-amber-600 transition">こだわり</a>
+          <a href="#menu" class="text-stone-700 hover:text-amber-600 transition">メニュー</a>
+          <a href="#contact" class="text-stone-700 hover:text-amber-600 transition">アクセス</a>
+        </div>
+        <button class="md:hidden text-stone-700">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1601924928450-3a7d0e3d29a2" alt="カフェラテ">
-        <h3>カフェラテ</h3>
-        <p>エスプレッソにスチームミルクを加えた、まろやかな味のコーヒーです。</p>
+    </div>
+  </nav>
+New
+9:53
+<!-- Hero Section -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center pt-16 gradient-animate" style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 25%, #FCA5A5 50%, #FDA4AF 75%, #FCA5A5 100%);">
+    <!-- Decorative elements -->
+    <div class="absolute top-20 left-10 text-6xl opacity-20 float">:cherry_blossom:</div>
+    <div class="absolute top-40 right-20 text-5xl opacity-20 float" style="animation-delay: 0.5s;">:coconut:</div>
+    <div class="absolute bottom-40 left-20 text-7xl opacity-20 float" style="animation-delay: 1s;">:tropical_drink:</div>
+    <div class="absolute bottom-20 right-10 text-6xl opacity-20 float" style="animation-delay: 1.5s;">:hibiscus:</div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+      <div class="fade-in">
+        <h1 class="font-display text-6xl md:text-8xl font-bold text-stone-800 mb-6 text-balance">
+          タイらしさを<br/>沖縄で
+        </h1>
       </div>
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1617196034796-73c3c1b06b4f" alt="カフェモカ">
-        <h3>カフェモカ</h3>
-        <p>チョコレートとエスプレッソを合わせた、甘くて香ばしいコーヒーです。</p>
+      <div class="fade-in fade-in-delay-1">
+        <p class="text-xl md:text-2xl text-stone-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+          Discover the exotic essence of Thailand through authentic drinks and desserts<br/>
+          本格的なタイティーとデザートで、タイの虜に
+        </p>
       </div>
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1617196034796-73c3c1b06b4f" alt="エスプレッソ">
-        <h3>エスプレッソ</h3>
-        <p>少量で濃厚な味わいのコーヒーです。</p>
+      <div class="fade-in fade-in-delay-2">
+        <button class="bg-amber-700 hover:bg-amber-800 text-white px-8 py-4 rounded-full text-lg font-semibold transition pulse-hover shadow-lg">
+          メニューを見る
+        </button>
       </div>
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1625944230949-fb36bde2903a" alt="ココア">
-        <h3>ココア</h3>
-        <p>チョコレートの甘さが楽しめる、ホットまたはアイスドリンクです。</p>
-      </div>
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1625944230949-fb36bde2903a" alt="ピンクミルク">
-        <h3>ピンクミルク</h3>
-        <p>甘いシロップを入れたピンク色のミルクドリンクです。</p>
-      </div>
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1625944230949-fb36bde2903a" alt="フルーツスムージー">
-        <h3>フルーツスムージー</h3>
-        <p>冷たいフルーツをミキサーにかけた、さっぱりしたドリンクです。</p>
-      </div>
-      <div class="menu-item">
-        <img src="https://images.unsplash.com/photo-1625944230949-fb36bde2903a" alt="フレッシュフルーツソーダ">
-        <h3>フレッシュフルーツソーダ</h3>
-        <p>　新鮮なフルーツとソーダを組み合わせた、爽やかなドリンクです。</p>
+      <!-- Scroll indicator -->
+      <div class="mt-16 fade-in fade-in-delay-3">
+        <svg class="w-6 h-6 mx-auto text-stone-600 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
       </div>
     </div>
   </section>
-  <!-- Ranking -->
-<section id="ranking">
-  <h2>おいしいタイのコーヒーランキング ベスト3</h2>
-
-  <div class="menu">
-
-    <!-- 1 位 -->
-    <!-- Updated placeholder with real Thai iced coffee image -->
-    <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=800&q=80" alt="タイ風アイスコーヒー">
-      <h3>第1位：タイ風アイスコーヒー</h3>
-      <p>タイ風の甘くて濃いアイスコーヒー。練乳やスパイスの風味が特徴です。</p>
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <h2 class="font-display text-5xl font-bold text-stone-800 mb-6">
+            Katiの想い
+          </h2>
+          <p class="text-stone-600 text-lg leading-relaxed mb-6">
+            「Kati（カティ）」という社名には、<strong class="text-amber-700">「タイらしさ」</strong>という言葉が込められています。
+          </p>
+          <p class="text-stone-600 text-lg leading-relaxed mb-6">
+            沖縄にタイティーを広めたい。お客様にタイ風ドリンクとデザートを提供し、タイの虜にします。
+          </p>
+          <p class="text-stone-600 text-lg leading-relaxed">
+            タイらしさと、人々を虜にするエキゾチックなデザートを味わうことは、外国人にとって新鮮な体験になります。
+          </p>
+        </div>
+        <div class="reveal">
+          <div class="relative">
+            <img src="/placeholder.svg?height=500&width=500" alt="Thai Tea" class="rounded-lg shadow-2xl w-full h-auto object-cover">
+            <div class="absolute -bottom-6 -left-6 bg-amber-600 text-white p-6 rounded-lg shadow-xl scale-in">
+              <p class="font-display text-3xl font-bold">100%</p>
+              <p class="text-sm">Authentic Thai</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- 2 位 -->
-    <!-- Updated placeholder with real traditional Thai coffee image -->
-    <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&q=80" alt="オーリアン">
-      <h3>第2位：オーリアン</h3>
-      <p>焙煎した穀物や茶葉を混ぜる、タイの伝統的なアイスコーヒーです。</p>
+  </section>
+  <!-- Target Audience Section -->
+  <section class="py-20 bg-stone-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="font-display text-5xl font-bold text-stone-800 mb-4">
+          こんな方に
+        </h2>
+        <p class="text-stone-600 text-xl">Who We Welcome</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center reveal menu-item">
+          <div class="text-5xl mb-4">:flag-th:</div>
+          <h3 class="font-display text-xl font-bold text-stone-800 mb-3">タイ人</h3>
+          <p class="text-stone-600">本場の味を懐かしむタイの方々へ</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center reveal menu-item" style="transition-delay: 0.1s;">
+          <div class="text-5xl mb-4">:earth_asia:</div>
+          <h3 class="font-display text-xl font-bold text-stone-800 mb-3">タイ好きの方</h3>
+          <p class="text-stone-600">タイ文化を愛する外国人の方々へ</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center reveal menu-item" style="transition-delay: 0.2s;">
+          <div class="text-5xl mb-4">:coffee:</div>
+          <h3 class="font-display text-xl font-bold text-stone-800 mb-3">軽いコーヒー派</h3>
+          <p class="text-stone-600">軽やかなドリンクをお求めの方へ</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center reveal menu-item" style="transition-delay: 0.3s;">
+          <div class="text-5xl mb-4">:sparkles:</div>
+          <h3 class="font-display text-xl font-bold text-stone-800 mb-3">新しもの好き</h3>
+          <p class="text-stone-600">新しい体験を求める冒険家へ</p>
+        </div>
+      </div>
     </div>
-
-    <!-- 3 位 -->
-    <!-- Updated placeholder with real coconut coffee image -->
-    <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80" alt="ココナッツコーヒー">
-      <h3>第3位：ココナッツコーヒー</h3>
-      <p>ココナッツミルクを加えた南国風のまろやかなコーヒー。</p>
+  </section>
+  <!-- Menu Highlights Section -->
+  <section id="menu" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="font-display text-5xl font-bold text-stone-800 mb-4">
+          おすすめメニュー
+        </h2>
+        <p class="text-stone-600 text-xl">Featured Menu</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Thai Tea -->
+        <div class="bg-stone-50 rounded-2xl overflow-hidden shadow-lg reveal menu-item">
+          <div class="h-64 bg-gradient-to-br from-orange-300 to-orange-500 relative overflow-hidden">
+            <img src="/placeholder.svg?height=400&width=400" alt="Thai Tea" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-bold text-stone-800 mb-2">Thai Tea</h3>
+            <p class="text-stone-600 mb-4">本格的なタイティー。濃厚でクリーミーな味わい</p>
+            <p class="font-display text-3xl font-bold text-amber-700">¥450</p>
+          </div>
+        </div>
+        <!-- Mango Sticky Rice -->
+        <div class="bg-stone-50 rounded-2xl overflow-hidden shadow-lg reveal menu-item" style="transition-delay: 0.1s;">
+          <div class="h-64 bg-gradient-to-br from-yellow-300 to-orange-400 relative overflow-hidden">
+            <img src="/placeholder.svg?height=400&width=400" alt="Mango Sticky Rice" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-bold text-stone-800 mb-2">マンゴースティッキーライス</h3>
+            <p class="text-stone-600 mb-4">タイの定番デザート。甘いマンゴーともち米の絶妙なハーモニー</p>
+            <p class="font-display text-3xl font-bold text-amber-700">¥650</p>
+          </div>
+        </div>
+        <!-- Butterfly Pea Tea -->
+        <div class="bg-stone-50 rounded-2xl overflow-hidden shadow-lg reveal menu-item" style="transition-delay: 0.2s;">
+          <div class="h-64 bg-gradient-to-br from-blue-400 to-purple-500 relative overflow-hidden">
+            <img src="/placeholder.svg?height=400&width=400" alt="Butterfly Pea Tea" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-bold text-stone-800 mb-2">バタフライピーティー</h3>
+            <p class="text-stone-600 mb-4">神秘的な青いハーブティー。レモンで色が変わる魔法のドリンク</p>
+            <p class="font-display text-3xl font-bold text-amber-700">¥500</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-  </div>
-</section>
- <!-- Footer -->
-  <footer>
-    <p>© 2025 ( っ◔◡◔)っ　Kati Café. All Rights Reserved.</p>
+  </section>
+  <!-- Experience Section -->
+  <section class="py-20 bg-stone-800 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-96 h-96 bg-amber-500 rounded-full blur-3xl rotate-slow"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-rose-500 rounded-full blur-3xl rotate-slow" style="animation-delay: -10s;"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center reveal">
+        <h2 class="font-display text-5xl font-bold mb-6">
+          エキゾチックな体験を
+        </h2>
+        <p class="text-xl text-stone-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+          A Fresh Experience of Thai-ness<br/>
+          タイらしさと、人々を虜にするエキゾチックなデザートを味わうことは、<br/>
+          外国人にとって新鮮な体験になります
+        </p>
+        <div class="grid md:grid-cols-3 gap-8 mt-16">
+          <div class="reveal">
+            <div class="text-6xl mb-4">:palm_tree:</div>
+            <h3 class="font-display text-2xl font-bold mb-3">Authentic</h3>
+            <p class="text-stone-300">本場タイの味を忠実に再現</p>
+          </div>
+          <div class="reveal" style="transition-delay: 0.1s;">
+            <div class="text-6xl mb-4">:sparkles:</div>
+            <h3 class="font-display text-2xl font-bold mb-3">Exotic</h3>
+            <p class="text-stone-300">エキゾチックで魅惑的な体験</p>
+          </div>
+          <div class="reveal" style="transition-delay: 0.2s;">
+            <div class="text-6xl mb-4">:hibiscus:</div>
+            <h3 class="font-display text-2xl font-bold mb-3">Fresh</h3>
+            <p class="text-stone-300">新鮮な驚きと発見</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-amber-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <h2 class="font-display text-5xl font-bold text-stone-800 mb-6">
+            Visit Us
+          </h2>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="text-3xl">:round_pushpin:</div>
+              <div>
+                <h3 class="font-bold text-stone-800 text-lg mb-1">Location</h3>
+                <p class="text-stone-600">沖縄県那覇市<br/>Naha, Okinawa</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="text-3xl">:alarm_clock:</div>
+              <div>
+                <h3 class="font-bold text-stone-800 text-lg mb-1">Hours</h3>
+                <p class="text-stone-600">10:00 - 20:00<br/>定休日：水曜日</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="text-3xl">:telephone_receiver:</div>
+              <div>
+                <h3 class="font-bold text-stone-800 text-lg mb-1">Contact</h3>
+                <p class="text-stone-600">098-XXX-XXXX<br/>info@katicafe.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="bg-white p-8 rounded-2xl shadow-xl">
+            <h3 class="font-display text-2xl font-bold text-stone-800 mb-6">お問い合わせ</h3>
+            <form class="space-y-4">
+              <div>
+                <input type="text" placeholder="お名前" class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500">
+              </div>
+              <div>
+                <input type="email" placeholder="メールアドレス" class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500">
+              </div>
+              <div>
+                <textarea placeholder="メッセージ" rows="4" class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-amber-700 hover:bg-amber-800 text-white py-3 rounded-lg font-semibold transition pulse-hover">
+                送信する
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+9:53
+<!-- Footer -->
+  <footer class="bg-stone-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <span class="text-3xl">:hibiscus:</span>
+            <span class="font-display text-2xl font-bold">Kati Cafe</span>
+          </div>
+          <p class="text-stone-400">タイらしさを沖縄で<br/>Bringing Thai essence to Okinawa</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-4">Links</h4>
+          <ul class="space-y-2 text-stone-400">
+            <li><a href="#home" class="hover:text-amber-400 transition">ホーム</a></li>
+            <li><a href="#about" class="hover:text-amber-400 transition">こだわり</a></li>
+            <li><a href="#menu" class="hover:text-amber-400 transition">メニュー</a></li>
+            <li><a href="#contact" class="hover:text-amber-400 transition">アクセス</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-3xl hover:text-amber-400 transition">:blue_book:</a>
+            <a href="#" class="text-3xl hover:text-amber-400 transition">:camera_with_flash:</a>
+            <a href="#" class="text-3xl hover:text-amber-400 transition">:bird:</a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-stone-800 text-center text-stone-400">
+        <p>&copy; 2025 Kati Cafe. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
-
-  <!-- スクロールアニメーション -->
   <script>
-  const items = document.querySelectorAll('.menu-item, section');
-
-  const showOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.85;
-    items.forEach(item => {
-      const boxTop = item.getBoundingClientRect().top;
-      if (boxTop < triggerBottom) {
-        item.classList.add('visible');
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+    // Observe all reveal elements
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    // Add parallax effect to hero section
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const hero = document.querySelector('#home');
+      if (hero && scrolled < window.innerHeight) {
+        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
       }
     });
-  };
-
-  window.addEventListener('scroll', showOnScroll);
-  showOnScroll();
-</script>
-
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
