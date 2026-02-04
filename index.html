@@ -260,46 +260,94 @@ kati日本語でココナツミルクのいみです。
           おいしいタイのコーヒーランキング ベスト３
         </h2>
 
-      </div>
-      <div class="grid md:grid-cols-4 gap-8">
-<!-- Thai Iced Coffee -->
-        <div class="bg-stone-50 rounded-2xl overflow-hidden shadow-lg reveal menu-item">
-          <div class="menu-item">
-  <img src="https://hot-thai-kitchen.com/thai-iced-coffee/"  alt="Thai Iced Coffee">
-  <h3>タイ風アイスコーヒー</h3>
-          </div>
-          <div class="p-6">
-            <h3 class="font-display text-2xl font-bold text-stone-800 mb-2">第1位：タイ風アイスコーヒー (Thai Iced Coffee)</h3>
-            <p class="text-stone-600 mb-4">濃厚で甘く、香り高く、独特の風味を持つタイのアイスコーヒー。</p>
-            <p class="font-display text-3xl font-bold text-amber-700">¥450</p>
-          </div>
+     <!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เมนูเครื่องดื่มไทย</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f7f3e8;
+            color: #4b3832;
+            margin: 20px;
+        }
+        .menu-item {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .item-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 0;
+        }
+        .item-description {
+            margin-bottom: 10px;
+        }
+        .item-price {
+            font-size: 1.1em;
+            color: #d32f2f;
+            font-weight: bold;
+        }
+        /* CSS สำหรับจัดรูปภาพกึ่งกลาง */
+        .center-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .menu-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<!-- รายการที่ 1: Thai Iced Coffee -->
+    <div class="menu-item">
+        <div class="center-container">
+            <!-- URL จาก https://hot-thai-kitchen.com [1.4] -->
+            <img src="https://hot-thai-kitchen.com" alt="Thai Iced Coffee" class="menu-image">
         </div>
-        <!-- Oliang -->
-        <div class="bg-stone-50 rounded-2xl overflow-hidden shadow-lg reveal menu-item" style="transition-delay: 0.1s;">
-          <div class="menu-item">
-  <img src="https://cdn.pixabay.com/photo/2022/06/19/09/36/coffee-7271979_1280.jpg" alt="Oliang">
-  <h3>オーリアン</h3>
-          </div>
-          <div class="p-6">
-            <h3 class="font-display text-2xl font-bold text-stone-800 mb-2">第2位：オーリアン（Oliang） </h3>
-            <p class="text-stone-600 mb-4">タイの定番デザート。甘いマンゴーともち米の絶妙なハーモニー</p>
-            <p class="font-display text-3xl font-bold text-amber-700">¥650</p>
-          </div>
-        </div>
-        <!-- Coconut Coffee -->
-        <div class="bg-stone-50 rounded-2xl overflow-hidden shadow-lg reveal menu-item" style="transition-delay: 0.2s;">
-          <div class="menu-item">
-  <img src="https://cdn.pixabay.com/photo/2023/02/04/12/57/coconut-coffee-7767780_1280.jpg"  alt="Coconut Coffee">
-  <h3>ココナッツコーヒー</h3>
-          </div>
-          <div class="p-6">
-            <h3 class="font-display text-2xl font-bold text-stone-800 mb-2">第3位：ココナッツコーヒー (Coconut Coffee)</h3>
-            <p class="text-stone-600 mb-4">ココナッツを混ぜたコーヒーで、ココナッツの香りと自然な甘さが味わえます。</p>
-            <p class="font-display text-3xl font-bold text-amber-700">¥500</p>
-          </div>
-        </div>
-      </div>
+        <h2 class="item-title">1. タイ風アイスコーヒー (Thai Iced Coffee)</h2>
+        <p class="item-description">
+            濃厚で甘く、香り高く、独特の風味を持つタイのアイスコーヒー。
+        </p>
+        <p class="item-price">¥650</p>
     </div>
+
+    <!-- รายการที่ 2: Oliang -->
+    <div class="menu-item">
+        <div class="center-container">
+            <!-- URL จาก https://www.simplysuwanee.com [1.11] -->
+            <img src="https://www.simplysuwanee.com" alt="Oliang" class="menu-image">
+        </div>
+        <h2 class="item-title">2. オーリアン (Oliang)</h2>
+        <p class="item-description">
+            タイの定番デザート。甘いマンゴーともち米の絶妙なハーモニー
+        </p>
+        <p class="item-price">¥650</p>
+    </div>
+
+    <!-- รายการที่ 3: Coconut Coffee -->
+    <div class="menu-item">
+        <div class="center-container">
+            <!-- URL จาก https://daraeats.com [1.6] -->
+            <img src="https://daraeats.com" alt="Coconut Coffee" class="menu-image">
+        </div>
+        <h2 class="item-title">3. ココナッツコーヒー (Coconut Coffee)</h2>
+        <p class="item-description">
+            ココナッツを混ぜたコーヒーで、ココナッツの香りと自然な甘さが味わえます。
+        </p>
+        <p class="item-price">¥700</p>
+    </div>
+
+</body>
+</html>
+
   </section>
   <!-- Menu Highlights Section -->
 <section id="menu" class="py-20 bg-white">
@@ -317,7 +365,7 @@ kati日本語でココナツミルクのいみです。
         <div class="p-6">
           <h3 class="font-display text-2xl font-bold text-stone-800 mb-2">アメリカーノ (Americano)</h3>
           <p class="text-stone-600 mb-4">ミルクや砂糖を入れない、濃いブラックコーヒーです。</p>
-          <p class="font-display text-3xl font-bold text-amber-700">¥450</p>
+          <p class="font-display text-3xl font-bold text-amber-700">¥650</p>
         </div>
       </div>
       <!-- Cafe Latte -->
@@ -326,7 +374,7 @@ kati日本語でココナツミルクのいみです。
         <div class="p-6">
           <h3 class="font-display text-2xl font-bold text-stone-800 mb-2">カフェラテ (Cafe Latte)</h3>
           <p class="text-stone-600 mb-4">エスプレッソにスチームミルクを加えた、まろやかな味のコーヒーです。</p>
-          <p class="font-display text-3xl font-bold text-amber-700">¥450</p>
+          <p class="font-display text-3xl font-bold text-amber-700">¥650</p>
         </div>
       </div>
       <!-- Cafe Mocha -->
@@ -335,7 +383,7 @@ kati日本語でココナツミルクのいみです。
         <div class="p-6">
           <h3 class="font-display text-2xl font-bold text-stone-800 mb-2">カフェモカ (Cafe Mocha)</h3>
           <p class="text-stone-600 mb-4">チョコレートとエスプレッソを合わせた、甘くて香ばしいコーヒーです。</p>
-          <p class="font-display text-3xl font-bold text-amber-700">¥450</p>
+          <p class="font-display text-3xl font-bold text-amber-700">¥650</p>
         </div>
       </div>
     </div>
@@ -350,7 +398,7 @@ kati日本語でココナツミルクのいみです。
         <div class="p-6">
           <h3 class="font-display text-2xl font-bold text-stone-800 mb-2">エスプレッソ (Espresso)</h3>
           <p class="text-stone-600 mb-4">少量で濃厚な味わいのコーヒーです。</p>
-          <p class="font-display text-3xl font-bold text-amber-700">¥450</p>
+          <p class="font-display text-3xl font-bold text-amber-700">¥650</p>
         </div>
       </div>
       <!-- Cocoa -->
@@ -359,7 +407,7 @@ kati日本語でココナツミルクのいみです。
         <div class="p-6">
           <h3 class="font-display text-2xl font-bold text-stone-800 mb-2">ココア (Cocoa)</h3>
           <p class="text-stone-600 mb-4">チョコレートの甘さが楽しめる、ホットまたはアイスドリンクです。</p>
-          <p class="font-display text-3xl font-bold text-amber-700">¥450</p>
+          <p class="font-display text-3xl font-bold text-amber-700">¥650</p>
         </div>
       </div>
       <!-- Fresh Fruit Soda -->
@@ -368,7 +416,7 @@ kati日本語でココナツミルクのいみです。
         <div class="p-6">
           <h3 class="font-display text-2xl font-bold text-stone-800 mb-2">フレッシュフルーツソーダ (Fresh Fruit Soda)</h3>
           <p class="text-stone-600 mb-4">新鮮なフルーツとソーダを組み合わせた、爽やかなドリンクです。</p>
-          <p class="font-display text-3xl font-bold text-amber-700">¥450</p>
+          <p class="font-display text-3xl font-bold text-amber-700">¥850</p>
         </div>
       </div>
 <!-- Fruit Smoothie -->
@@ -377,7 +425,7 @@ kati日本語でココナツミルクのいみです。
         <div class="p-6">
           <h3 class="font-display text-2xl font-bold text-stone-800 mb-2">フルーツスムージー (Fruit Smoothie)</h3>
           <p class="text-stone-600 mb-4">冷たいフルーツをミキサーにかけた、さっぱりしたドリンクです。</p>
-          <p class="font-display text-3xl font-bold text-amber-700">¥450</p>
+          <p class="font-display text-3xl font-bold text-amber-700">¥850</p>
         </div>
       </div>
     </div>

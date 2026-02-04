@@ -585,13 +585,13 @@ footer {
 
 .info-icon {
   font-size: 2rem;
-  color: #d97706;
+  color: #27852c;
   flex-shrink: 0;
 }
 
 .info-content h3 {
   font-size: 1.3rem;
-  color: #92400e;
+  color: #27852c;
   margin-bottom: 10px;
   font-weight: bold;
 }
