@@ -527,7 +527,7 @@ section h2 {
 
 footer {
   background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
-  color: white;
+  color: rgb(185, 132, 88);
   text-align: center;
   padding: 30px 20px;
   margin-top: 40px;
@@ -560,7 +560,7 @@ footer {
 }
 
 .shop-info-card {
-  background: white;
+  background: rgb(190, 138, 95);
   border-radius: 15px;
   padding: 40px;
   max-width: 800px;
